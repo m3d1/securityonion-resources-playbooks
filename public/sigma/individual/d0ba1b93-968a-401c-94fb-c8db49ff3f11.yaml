@@ -1,0 +1,136 @@
+name: Active Directory - frequent Account Lockout
+id: 1599000
+description: |
+    Detects when more than one Account lockout is initiated . This indicates potential credential brute-forcing or unauthorized access attempts. Review the source IP and submitted credentials.
+type: detection
+detection_id: 'd0ba1b93-968a-401c-94fb-c8db49ff3f11'
+detection_category: ''
+detection_type: 'sigma'
+contributors:
+  - 'm3d1'
+  - 'SecurityOnionSolutions'
+created: 2025-11-20
+questions:
+  - question: "What account login attempts asociated with the lockout?"
+    context: "Is it due to an approved vulnerability scanner or some other legitimate system ?"
+    range: -7d
+    query: |
+        aggregation: false
+        logsource:
+            product: windows
+        detection:
+            selection:
+                event.code:'4740'
+                winlog.task: 'User Account Management''
+            condition: selection
+        fields:
+            - event.code
+            - user.target.name
+            - user.target.domain
+  - question: "What are the similar event asociated with the lockout accounts in the past 7 days?"
+    context: "is there a ongoing attack or not"
+    range: -7d
+    query: |
+        aggregation: false
+        logsource:
+            product: windows
+        detection:
+            selection:
+                event.code:'4740'
+                winlog.task: 'User Account Management''
+            condition: selection
+        fields:
+            - event.code
+  - question: "question 3"
+    context: "Context 3"
+    range: -7d
+    query: |
+        aggregation: false
+        logsource:
+            product: windows
+        detection:
+            selection:
+                event.code:'4740'
+                winlog.task: 'User Account Management''
+            condition: selection
+        fields:
+            - event.code
+            - user.target.name
+  - question: "question 4"
+    context: "Context 4"
+    range: -1d
+    query: |
+        aggregation: false
+        logsource:
+            product: windows
+        detection:
+            selection:
+                event.code:'4625'
+                winlog.task: 'User Account Management''
+            condition: selection
+        fields:
+            - event.code
+            - user.target.name
+  - question: "question 5"
+    context: "Context 5"
+    range: -1d
+    query: |
+        aggregation: false
+        logsource:
+            product: windows
+        detection:
+            selection:
+                event.code:'4771'
+                winlog.task: 'User Account Management''
+            condition: selection
+        fields:
+            - event.code
+            - user.target.name
+  - question: "question 6"
+    context: "Context 6"
+    range: -13d
+    query: |
+        aggregation: false
+        logsource:
+            product: windows
+        detection:
+            selection:
+                event.code:'4625'
+                winlog.task: 'User Account Management''
+            condition: selection
+        fields:
+            - event.code
+            - user.target.name
+  - question: "question 7"
+    context: "Context 7"
+    range: -3d
+    query: |
+        aggregation: false
+        logsource:
+            product: windows
+        detection:
+            selection:
+                event.code:'4771'
+                winlog.task: 'User Account Management''
+            condition: selection
+        fields:
+            - event.code
+            - user.target.name
+  - question: "question 8"
+    context: "Context 8"
+    range: -3d
+    query: |
+        aggregation: false
+        logsource:
+            product: windows
+        detection:
+            selection:
+                event.code:'4771'
+                winlog.task: 'User Account Management''
+            condition: selection
+        fields:
+            - event.code
+            - user.target.name
+
+
+
