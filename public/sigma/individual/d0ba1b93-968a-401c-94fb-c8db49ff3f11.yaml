@@ -21,7 +21,7 @@ questions:
         detection:
             selection:
                 event.code:'4740'
-                winlog.task: 'User Account Management''
+                winlog.task: 'User Account Management'
             condition: selection
         fields:
             - event.code
@@ -37,7 +37,7 @@ questions:
         detection:
             selection:
                 event.code:'4740'
-                winlog.task: 'User Account Management''
+                winlog.task: 'User Account Management'
             condition: selection
         fields:
             - event.code
@@ -51,7 +51,7 @@ questions:
         detection:
             selection:
                 event.code:'4740'
-                winlog.task: 'User Account Management''
+                winlog.task: 'User Account Management'
             condition: selection
         fields:
             - event.code
@@ -66,7 +66,7 @@ questions:
         detection:
             selection:
                 event.code:'4625'
-                winlog.task: 'User Account Management''
+                winlog.task: 'User Account Management'
             condition: selection
         fields:
             - event.code
@@ -81,7 +81,7 @@ questions:
         detection:
             selection:
                 event.code:'4771'
-                winlog.task: 'User Account Management''
+                winlog.task: 'User Account Management'
             condition: selection
         fields:
             - event.code
@@ -96,7 +96,7 @@ questions:
         detection:
             selection:
                 event.code:'4625'
-                winlog.task: 'User Account Management''
+                winlog.task: 'User Account Management'
             condition: selection
         fields:
             - event.code
@@ -111,7 +111,7 @@ questions:
         detection:
             selection:
                 event.code:'4771'
-                winlog.task: 'User Account Management''
+                winlog.task: 'User Account Management'
             condition: selection
         fields:
             - event.code
@@ -126,7 +126,7 @@ questions:
         detection:
             selection:
                 event.code:'4771'
-                winlog.task: 'User Account Management''
+                winlog.task: 'User Account Management'
             condition: selection
         fields:
             - event.code
